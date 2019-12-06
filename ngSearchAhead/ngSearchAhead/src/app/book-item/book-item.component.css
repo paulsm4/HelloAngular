@@ -1,0 +1,10 @@
+.book-container {
+  clear: left;
+  padding: 2px;
+  color: green;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.book-container .title {
+  font-weight: bold;
+}

@@ -1,0 +1,11 @@
+#angular-logo {
+  float: left;
+}
+#search {
+  margin: 50px;
+  font-family: sans-serif;
+}
+
+#search #prompt {
+  font-weight: bold;
+}

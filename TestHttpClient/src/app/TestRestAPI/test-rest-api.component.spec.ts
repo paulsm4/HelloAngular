@@ -1,14 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { TestRestAPIComponent } from './test-rest-api.component';
 
 describe('TestRestAPIComponent', () => {
-  let component: TestRestAPIComponent;
+   let component: TestRestAPIComponent;
   let fixture: ComponentFixture<TestRestAPIComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TestRestAPIComponent ]
+      imports: [HttpClientTestingModule],
+      declarations: [ TestRestAPIComponent ],
     })
     .compileComponents();
   }));

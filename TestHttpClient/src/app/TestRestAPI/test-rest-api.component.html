@@ -1,0 +1,21 @@
+<h1>Blog posts</h1>
+<p *ngIf="!(blogPosts$ | async)"><em>Loading...</em></p>
+<table class="table table-sm table-hover" *ngIf="(blogPosts$ | async)?.length>0">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Creator</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let blogPost of (blogPosts$ | async)">
+      <td>{{ blogPost.postId }}</td>
+      <td>{{ blogPost.creator }}</td>
+      <td>{{ blogPost.dt | date: "dd.MM.y" }}</td>
+    </tr>
+  </tbody>
+</table>

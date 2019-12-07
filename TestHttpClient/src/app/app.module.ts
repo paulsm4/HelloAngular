@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { TestRestAPIComponent } from './TestRestAPI/test-rest-api/test-rest-api.component';
 import { HttpClientModule } from '@angular/common/http';
+
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { TestRestAPIComponent } from './TestRestAPI/test-rest-api.component';
 
 @NgModule({
   declarations: [

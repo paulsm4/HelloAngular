@@ -1,4 +1,4 @@
-* Original intent: explore options for "testing" Angular app during code development
+﻿* Original intent: explore options for "testing" Angular app during code development
 
   - Unit testing Angular service with HttpClient, Sergey Kryvets
       https://skryvets.com/blog/2018/02/18/unit-testing-angular-service-with-httpclient/
@@ -263,6 +263,23 @@ https://stackoverflow.com/questions/47345282/how-to-add-cors-request-in-header-i
 https://stackoverflow.com/questions/53258297/access-to-xmlhttprequest-has-been-blocked-by-cors-policy
   <= Nothing helped,including a) ensuring CORS enabled n .Net Core "Startup.cs", disabling CORS in Chrome, etc etc...
 
+  - $PROJ\HelloAngular\dotnetcore-angular8\Blog\Startup.cs:
+      public class Startup {
+        ...
+        public void ConfigureServices(IServiceCollection services) {
+          ...
+          services.AddCors(options => {
+            options.AddPolicy("CorsPolicy",
+              builder => builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+            );
+          });
+        ...
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+          ...
+          app.UseCors("CorsPolicy");
+        
 ===================================================================================================
 
 * Plan C:

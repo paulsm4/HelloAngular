@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { BlogPostService } from '../services/blog-post.service';
-import { BlogPost } from '../models/blog-post';
+import { BlogPost } from '../models/blogpost';
 
 @Component({
   selector: 'app-blog-post',
   templateUrl: './blog-post.component.html',
-  styleUrls: ['./blog-post.component.css']
+  styleUrls: ['./blog-post.component.scss']
 })
 export class BlogPostComponent implements OnInit {
   blogPost$: Observable<BlogPost>;

@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { BlogPostService } from '../services/blog-post.service';
-import { BlogPost } from '../models/blog-post';
+import { BlogPost } from '../models/blogpost';
 
 @Component({
   selector: 'app-blog-post-add-edit',
   templateUrl: './blog-post-add-edit.component.html',
-  styleUrls: ['./blog-post-add-edit.component.css']
+  styleUrls: ['./blog-post-add-edit.component.scss']
 })
 export class BlogPostAddEditComponent implements OnInit {
   form: FormGroup;

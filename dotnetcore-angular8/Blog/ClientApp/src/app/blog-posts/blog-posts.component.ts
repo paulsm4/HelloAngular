@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BlogPostService } from '../services/blog-post.service';
-import { BlogPost } from '../models/blog-post';
+import { BlogPost } from '../models/blogpost';
 
 @Component({
   selector: 'app-blog-posts',
   templateUrl: './blog-posts.component.html',
-  styleUrls: ['./blog-posts.component.css']
+  styleUrls: ['./blog-posts.component.scss']
 })
 export class BlogPostsComponent implements OnInit {
-
   blogPosts$: Observable<BlogPost[]>;
 
-  constructor(private blogPostService: BlogPostService) { }
+  constructor(private blogPostService: BlogPostService) {
+  }
 
   ngOnInit() {
     this.loadBlogPosts();
@@ -30,5 +30,4 @@ export class BlogPostsComponent implements OnInit {
       });
     }
   }
-
 }

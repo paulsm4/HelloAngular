@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { BlogPost } from '../models/blog-post';
+import { BlogPost } from '../models/blogpost';
 
 @Injectable({
   providedIn: 'root'
@@ -18,20 +18,20 @@ export class BlogPostService {
     })
   };
   constructor(private http: HttpClient) {
-      this.myAppUrl = environment.appUrl;
-      this.myApiUrl = 'api/BlogPosts/';
+    this.myAppUrl = environment.appUrl;
+    this.myApiUrl = 'api/BlogPosts/';
   }
 
   getBlogPosts(): Observable<BlogPost[]> {
     return this.http.get<BlogPost[]>(this.myAppUrl + this.myApiUrl)
-    .pipe(
-      retry(1),
-      catchError(this.errorHandler)
-    );
+      .pipe(
+        retry(1),
+        catchError(this.errorHandler)
+      );
   }
 
   getBlogPost(postId: number): Observable<BlogPost> {
-      return this.http.get<BlogPost>(this.myAppUrl + this.myApiUrl + postId)
+    return this.http.get<BlogPost>(this.myAppUrl + this.myApiUrl + postId)
       .pipe(
         retry(1),
         catchError(this.errorHandler)
@@ -39,7 +39,7 @@ export class BlogPostService {
   }
 
   saveBlogPost(blogPost): Observable<BlogPost> {
-      return this.http.post<BlogPost>(this.myAppUrl + this.myApiUrl, JSON.stringify(blogPost), this.httpOptions)
+    return this.http.post<BlogPost>(this.myAppUrl + this.myApiUrl, JSON.stringify(blogPost), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.errorHandler)
@@ -47,7 +47,7 @@ export class BlogPostService {
   }
 
   updateBlogPost(postId: number, blogPost): Observable<BlogPost> {
-      return this.http.put<BlogPost>(this.myAppUrl + this.myApiUrl + postId, JSON.stringify(blogPost), this.httpOptions)
+    return this.http.put<BlogPost>(this.myAppUrl + this.myApiUrl + postId, JSON.stringify(blogPost), this.httpOptions)
       .pipe(
         retry(1),
         catchError(this.errorHandler)
@@ -55,7 +55,7 @@ export class BlogPostService {
   }
 
   deleteBlogPost(postId: number): Observable<BlogPost> {
-      return this.http.delete<BlogPost>(this.myAppUrl + this.myApiUrl + postId)
+    return this.http.delete<BlogPost>(this.myAppUrl + this.myApiUrl + postId)
       .pipe(
         retry(1),
         catchError(this.errorHandler)

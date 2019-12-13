@@ -4,7 +4,7 @@
   <div>{{ blogPost.body }}</div>
   <ul>
     <li>{{ blogPost.creator }}</li>
-    <li>{{ blogPost.dt }}</li>
+    <li>{{ blogPost.dt | date: "dd.MM.y" }}</li>
   </ul>
 
 </ng-container>
